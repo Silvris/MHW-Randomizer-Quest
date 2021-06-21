@@ -1,0 +1,185 @@
+//------------------------------------------------
+//--- 010 Editor v11.0.1 Script File
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+//   History: 
+//------------------------------------------------
+local int i;
+local int alaSub = 1;
+local int sobjFile = GetFileNum();
+local string baseName = FileNameGetBase(GetFileName(),false);
+local string basePath = "C:\\Users\\Owner\\Documents\\GitHub\\MHW-Randomizer-Quest\\Sobjs\\";
+local string stage = "";
+local string extension = ".sobj";
+local string finalName = "";
+int monsterIds[58] = {0,1,7,9,10,11,12,13,14,16,17,18,19,21,22,24,27,28,29,30,31,32,33,34,35,37,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,87,87,88,89,90,91,92,93,94,95,99,100};
+
+//get string from id, because fuck
+string getFileId(int id){
+    switch(id){
+        case 0:
+            return "em100_00";
+        case 1:
+            return "em002_00";
+        case 7:
+            return "em101_00";
+        case 9:
+            return "em001_00";
+        case 10:
+            return "em001_01";
+        case 11:
+            return "em002_01";
+        case 12:
+            return "em007_00";
+        case 13:
+            return "em007_01";
+        case 14:
+            return "em011_00";
+        case 16:
+            return "em024_00";
+        case 17:
+            return "em026_00";
+        case 18:
+            return "em027_00";
+        case 19:
+            return "em036_00";
+        case 21:
+            return "em044_00";
+        case 22:
+            return "em045_00";
+        case 24:
+            return "em102_00";
+        case 27:
+            return "em107_00";
+        case 28:
+            return "em120_00";
+        case 29:
+            return "em108_00";
+        case 30:
+            return "em109_00";
+        case 31:
+            return "em110_00";
+        case 32:
+            return "em111_00";
+        case 33:
+            return "em112_00";
+        case 34:
+            return "em113_00";
+        case 35:
+            return "em114_00";
+        case 37:
+            return "em116_00";
+        case 61:
+            return "em032_00";
+        case 62:
+            return "em037_00";
+        case 63:
+            return "em042_00";
+        case 64:
+            return "em043_05";
+        case 65:
+            return "em063_00";
+        case 66:
+            return "em080_00";
+        case 67:
+            return "em080_01";
+        case 68:
+            return "em100_01";
+        case 69:
+            return "em102_01";
+        case 70:
+            return "em103_05";
+        case 71:
+            return "em109_01";
+        case 72:
+            return "em110_01";
+        case 73:
+            return "em111_05";
+        case 74:
+            return "em113_01";
+        case 75:
+            return "em115_05";
+        case 76:
+            return "em118_05";
+        case 77:
+            return "em122_00";
+        case 78:
+            return "em123_00";
+        case 79:
+            return "em124_00";
+        case 80:
+            return "em125_00";
+        case 87:
+            return "em050_00";
+        case 88:
+            return "em001_02";
+        case 89:
+            return "em002_02";
+        case 90:
+            return "em018_00";
+        case 91:
+            return "em023_00";
+        case 92:
+            return "em023_05";
+        case 93:
+            return "em032_01";
+        case 94:
+            return "em057_00";
+        case 95:
+            return "em057_01";
+        case 99:
+            return "em018_05";
+        case 100:
+            return "em042_05";
+    };
+};
+
+string makeFilePath(string basePath, string emId, string stage, string index,string extension){
+    string s;
+    SPrintf(s, "%s%s_%s_%s%s",basePath,emId,stage,index,extension);
+    return s;
+};
+
+string getStage(){
+    string s;
+    s = SubStr(baseName, Strstr(baseName,"st"),5);
+    return s;
+};
+
+void CopySobjToAllMon(){
+    for(i = 0; i < 57;i++){
+        SetSelection(0,FileSize());
+        CopyToClipboard();
+        FileNew("Hex",true);
+        PasteFromClipboard();
+        RunTemplate("C:\Users\Owner\Documents\GitHub\MHWResearch-Dave\SOBJ\SOBJ.bt");//Dave Urr's SOBJ template
+        sobj[0].setObjectParam.mEmID = monsterIds[i];
+        if(monsterIds[i] == 87){
+            sobj[0].setObjectParam.mEmSubID = alaSub;
+            alaSub++;
+        };
+        local string index = "00";
+        if(monsterIds[i] == 87){
+            if(alaSub == 2){
+                index = "41";
+            }
+            else if(alaSub == 3){
+                index = "42";
+            };
+        }
+        else if(monsterIds[i] == 19){
+            index = "40";
+        };
+        stage = getStage();
+        finalName = makeFilePath(basePath, getFileId(monsterIds[i]), stage, index, extension);
+        FileSave(finalName);
+        FileClose();
+        FileSelect(sobjFile);
+    };
+
+};
+CopySobjToAllMon();

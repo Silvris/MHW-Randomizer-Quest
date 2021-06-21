@@ -338,3 +338,12 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+
+# ZIPPED PACKAGES
+*.zip
+*.rar
+
+# Generated Files
+[Aa]lnks/
+[Nn]ativePC/
+[Ss]objs/

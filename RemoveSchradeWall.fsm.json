@@ -1,0 +1,419 @@
+{
+ "header": {
+  "sig": [
+   88,
+   70,
+   83,
+   0
+  ],
+  "version": 19,
+  "type": 3589
+ },
+ "defs": [
+  {
+   "hash": 1723094544,
+   "members": [
+    {
+     "name": "mQuality",
+     "type": 6,
+     "unkn": 145,
+     "size": 4
+    },
+    {
+     "name": "mOwnerObjectName",
+     "type": 14,
+     "unkn": 0,
+     "size": 8
+    },
+    {
+     "name": "mpRootCluster",
+     "type": 2,
+     "unkn": 0,
+     "size": 8
+    },
+    {
+     "name": "mpConditionTree",
+     "type": 2,
+     "unkn": 0,
+     "size": 8
+    },
+    {
+     "name": "mFSMAttribute",
+     "type": 6,
+     "unkn": 0,
+     "size": 4
+    },
+    {
+     "name": "mLastEditType",
+     "type": 6,
+     "unkn": 0,
+     "size": 4
+    }
+   ]
+  },
+  {
+   "hash": 411468038,
+   "members": [
+    {
+     "name": "mId",
+     "type": 6,
+     "unkn": 0,
+     "size": 4
+    },
+    {
+     "name": "mOwnerNodeUniqueId",
+     "type": 6,
+     "unkn": 0,
+     "size": 4
+    },
+    {
+     "name": "mInitialStateId",
+     "type": 6,
+     "unkn": 0,
+     "size": 4
+    },
+    {
+     "name": "mpNodeList",
+     "type": 2,
+     "unkn": 160,
+     "size": 8
+    }
+   ]
+  },
+  {
+   "hash": 1345706237,
+   "members": [
+    {
+     "name": "mName",
+     "type": 14,
+     "unkn": 0,
+     "size": 8
+    },
+    {
+     "name": "mId",
+     "type": 6,
+     "unkn": 0,
+     "size": 4
+    },
+    {
+     "name": "mUniqueId",
+     "type": 6,
+     "unkn": 0,
+     "size": 4
+    },
+    {
+     "name": "mOwnerId",
+     "type": 6,
+     "unkn": 0,
+     "size": 4
+    },
+    {
+     "name": "mpSubCluster",
+     "type": 2,
+     "unkn": 0,
+     "size": 8
+    },
+    {
+     "name": "mpLinkList",
+     "type": 2,
+     "unkn": 160,
+     "size": 8
+    },
+    {
+     "name": "mpProcessList",
+     "type": 2,
+     "unkn": 160,
+     "size": 8
+    },
+    {
+     "name": "mUIPos",
+     "type": 6,
+     "unkn": 0,
+     "size": 4
+    },
+    {
+     "name": "mColorType",
+     "type": 4,
+     "unkn": 0,
+     "size": 1
+    },
+    {
+     "name": "mSetting",
+     "type": 6,
+     "unkn": 0,
+     "size": 4
+    },
+    {
+     "name": "mUserAttribute",
+     "type": 6,
+     "unkn": 0,
+     "size": 4
+    },
+    {
+     "name": "mExistConditionTrainsitionFromAll",
+     "type": 3,
+     "unkn": 0,
+     "size": 1
+    },
+    {
+     "name": "mConditionTrainsitionFromAllId",
+     "type": 6,
+     "unkn": 0,
+     "size": 4
+    }
+   ]
+  },
+  {
+   "hash": 2019452450,
+   "members": [
+    {
+     "name": "mQuality",
+     "type": 6,
+     "unkn": 145,
+     "size": 4
+    },
+    {
+     "name": "mpTreeList",
+     "type": 2,
+     "unkn": 160,
+     "size": 8
+    }
+   ]
+  },
+  {
+   "hash": 1620948288,
+   "members": [
+    {
+     "name": "mContainerName",
+     "type": 14,
+     "unkn": 0,
+     "size": 8
+    },
+    {
+     "name": "mCategoryName",
+     "type": 14,
+     "unkn": 0,
+     "size": 8
+    },
+    {
+     "name": "mpParameter",
+     "type": 2,
+     "unkn": 0,
+     "size": 8
+    }
+   ]
+  },
+  {
+   "hash": 1396716934,
+   "members": [
+    {
+     "name": "TagStr",
+     "type": 14,
+     "unkn": 128,
+     "size": 8
+    }
+   ]
+  }
+ ],
+ "root": {
+  "CLASS_ID": 1,
+  "mQuality": 2,
+  "mOwnerObjectName": "cFSMQuestPlayer",
+  "mpRootCluster": {
+   "CLASS_ID": 3,
+   "mId": 0,
+   "mOwnerNodeUniqueId": 0,
+   "mInitialStateId": 0,
+   "mpNodeList": {
+    "CLASS_ID": 5,
+    "mName": "Init",
+    "mId": 0,
+    "mUniqueId": 1906719149,
+    "mOwnerId": 0,
+    "mpSubCluster": {
+     "CLASS_ID": 65534,
+     "content": null
+    },
+    "mpLinkList": [],
+    "mpProcessList":
+    [
+      {
+       "CLASS_ID": 9,
+       "mContainerName": "GimmickKill_qt",
+       "mCategoryName": "cAIFSMProcessContainer",
+       "mpParameter": {
+        "CLASS_ID": 11,
+        "TagStr": "remove_wall_01"
+            }
+      },
+      {
+       "CLASS_ID": 9,
+       "mContainerName": "GimmickKill_qt",
+       "mCategoryName": "cAIFSMProcessContainer",
+       "mpParameter": {
+        "CLASS_ID": 11,
+        "TagStr": "remove_wall_02"
+            }
+      },
+      {
+       "CLASS_ID": 9,
+       "mContainerName": "GimmickKill_qt",
+       "mCategoryName": "cAIFSMProcessContainer",
+       "mpParameter": {
+        "CLASS_ID": 11,
+        "TagStr": "remove_wall_03"
+            }
+      },
+      {
+       "CLASS_ID": 9,
+       "mContainerName": "GimmickKill_qt",
+       "mCategoryName": "cAIFSMProcessContainer",
+       "mpParameter": {
+        "CLASS_ID": 11,
+        "TagStr": "remove_wall_04"
+            }
+      },
+      {
+       "CLASS_ID": 9,
+       "mContainerName": "GimmickKill_qt",
+       "mCategoryName": "cAIFSMProcessContainer",
+       "mpParameter": {
+        "CLASS_ID": 11,
+        "TagStr": "remove_wall_05"
+            }
+      },
+      {
+       "CLASS_ID": 9,
+       "mContainerName": "GimmickKill_qt",
+       "mCategoryName": "cAIFSMProcessContainer",
+       "mpParameter": {
+        "CLASS_ID": 11,
+        "TagStr": "remove_wall_06"
+            }
+      },
+      {
+       "CLASS_ID": 9,
+       "mContainerName": "GimmickKill_qt",
+       "mCategoryName": "cAIFSMProcessContainer",
+       "mpParameter": {
+        "CLASS_ID": 11,
+        "TagStr": "remove_wall_07"
+            }
+      },
+      {
+       "CLASS_ID": 9,
+       "mContainerName": "GimmickKill_qt",
+       "mCategoryName": "cAIFSMProcessContainer",
+       "mpParameter": {
+        "CLASS_ID": 11,
+        "TagStr": "remove_wall_08"
+            }
+      },
+      {
+       "CLASS_ID": 9,
+       "mContainerName": "GimmickKill_qt",
+       "mCategoryName": "cAIFSMProcessContainer",
+       "mpParameter": {
+        "CLASS_ID": 11,
+        "TagStr": "remove_wall_09"
+            }
+      },
+      {
+       "CLASS_ID": 9,
+       "mContainerName": "GimmickKill_qt",
+       "mCategoryName": "cAIFSMProcessContainer",
+       "mpParameter": {
+        "CLASS_ID": 11,
+        "TagStr": "remove_wall_10"
+            }
+      },
+      {
+       "CLASS_ID": 9,
+       "mContainerName": "GimmickKill_qt",
+       "mCategoryName": "cAIFSMProcessContainer",
+       "mpParameter": {
+        "CLASS_ID": 11,
+        "TagStr": "remove_wall_11"
+            }
+      },
+      {
+       "CLASS_ID": 9,
+       "mContainerName": "GimmickKill_qt",
+       "mCategoryName": "cAIFSMProcessContainer",
+       "mpParameter": {
+        "CLASS_ID": 11,
+        "TagStr": "remove_wall_12"
+            }
+      },
+      {
+       "CLASS_ID": 9,
+       "mContainerName": "GimmickKill_qt",
+       "mCategoryName": "cAIFSMProcessContainer",
+       "mpParameter": {
+        "CLASS_ID": 11,
+        "TagStr": "remove_wall_13"
+            }
+      },
+      {
+       "CLASS_ID": 9,
+       "mContainerName": "GimmickKill_qt",
+       "mCategoryName": "cAIFSMProcessContainer",
+       "mpParameter": {
+        "CLASS_ID": 11,
+        "TagStr": "remove_wall_14"
+            }
+      },
+      {
+       "CLASS_ID": 9,
+       "mContainerName": "GimmickKill_qt",
+       "mCategoryName": "cAIFSMProcessContainer",
+       "mpParameter": {
+        "CLASS_ID": 11,
+        "TagStr": "remove_wall_15"
+            }
+      },
+      {
+       "CLASS_ID": 9,
+       "mContainerName": "GimmickKill_qt",
+       "mCategoryName": "cAIFSMProcessContainer",
+       "mpParameter": {
+        "CLASS_ID": 11,
+        "TagStr": "remove_wall_16"
+            }
+      },
+      {
+       "CLASS_ID": 9,
+       "mContainerName": "GimmickKill_qt",
+       "mCategoryName": "cAIFSMProcessContainer",
+       "mpParameter": {
+        "CLASS_ID": 11,
+        "TagStr": "remove_wall_17"
+            }
+      },
+      {
+       "CLASS_ID": 9,
+       "mContainerName": "GimmickKill_qt",
+       "mCategoryName": "cAIFSMProcessContainer",
+       "mpParameter": {
+        "CLASS_ID": 11,
+        "TagStr": "remove_wall_18"
+            }
+      }
+    ],
+    "mUIPos": 139921001,
+    "mColorType": 0,
+    "mSetting": 1,
+    "mUserAttribute": 0,
+    "mExistConditionTrainsitionFromAll": 0,
+    "mConditionTrainsitionFromAllId": 0
+   }
+  },
+  "mpConditionTree": {
+   "CLASS_ID": 7,
+   "mQuality": 2,
+   "mpTreeList": []
+  },
+  "mFSMAttribute": 3,
+  "mLastEditType": 0
+ }
+}
