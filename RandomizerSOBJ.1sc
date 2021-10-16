@@ -12,7 +12,7 @@ local int i;
 local int alaSub = 1;
 local int sobjFile = GetFileNum();
 local string baseName = FileNameGetBase(GetFileName(),false);
-local string basePath = "C:\\Users\\Owner\\Documents\\GitHub\\MHW-Randomizer-Quest\\Sobjs\\";
+local string basePath = "C:\\Users\\silve\\Documents\\GitHub\\MHW-Randomizer-Quest\\Sobjs\\";
 local string stage = "";
 local string extension = ".sobj";
 local string finalName = "";
@@ -182,4 +182,26 @@ void CopySobjToAllMon(){
     };
 
 };
-CopySobjToAllMon();
+
+void CopySobjToMon(int monID, int alaSubID, int sobjID){
+        SetSelection(0,FileSize());
+        CopyToClipboard();
+        FileNew("Hex",true);
+        PasteFromClipboard();
+        RunTemplate("C:/Users/silve/Documents/GitHub/MHW_Research/SOBJ/SOBJ.bt");//Dave Urr's SOBJ template
+        sobj[0].setObjectParam.mEmID = monID;
+        if(monID == 87){
+            sobj[0].setObjectParam.mEmSubID = alaSub;
+        };
+        local string index = "";
+        SPrintf(index, "%02i", sobjID);
+        
+        stage = getStage();
+        finalName = makeFilePath(basePath, getFileId(monID), stage, index, extension);
+        FileSave(finalName);
+        FileClose();
+        FileSelect(sobjFile);
+};
+
+CopySobjToMon(70,0,45);
+//CopySobjToAllMon();

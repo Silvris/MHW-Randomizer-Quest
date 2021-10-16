@@ -1,4 +1,5 @@
 from pathlib import Path
+import sys
 import os
 import struct
 
@@ -11,8 +12,8 @@ def GetUIntFromBytes(buffer,start,end):
 def GetBytesFromUInt(value):
     return struct.pack("I",value)
 
-chunkPath = r"I:\MHW\chunk"
-outputPath = r"C:\\Users\\Owner\\Documents\\GitHub\\MHW-Randomizer-Quest\\Alnks\\"
+chunkPath = r"D:\MHW\chunk"
+outputPath = r"C:\Users\silve\Documents\GitHub\MHW-Randomizer-Quest"
 
 monsterIds = [0,1,7,9,10,11,12,13,14,16,17,18,19,21,22,24,27,28,29,30,31,32,33,34,35,37,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,87,88,89,90,91,92,93,94,95,99,100]
 
@@ -75,11 +76,32 @@ def readWriteALNK(inFile,outFile):
     inFile.close()
     outFile.close()
 
-for path in Path(chunkPath).rglob("*.dtt_alnk"):
-    print(path)
-    filePath = str(path).replace('\\','/').split(r"chunk/")[1]
+def getAllFromChunk():
+    for path in Path(chunkPath).rglob("*.dtt_alnk"):
+        print(path)
+        filePath = str(path).replace('\\','/').split(r"chunk/")[1]
+        dirPath = outputPath + "/nativePC/" + filePath
+        osPath = os.path.split(dirPath)[0]
+        if(osPath != ''):
+                os.makedirs(osPath,exist_ok=True)
+        readWriteALNK(open(path,'rb'),open(dirPath,'wb'))
+
+def getFromFile(path):
+    filePath = path.replace('\\','/').split(r"nativePC/")[1]
     dirPath = outputPath + "/nativePC/" + filePath
     osPath = os.path.split(dirPath)[0]
     if(osPath != ''):
-            os.makedirs(osPath,exist_ok=True)
+        os.makedirs(osPath,exist_ok=True)
     readWriteALNK(open(path,'rb'),open(dirPath,'wb'))
+
+
+if __name__ == "__main__":
+
+    if len(sys.argv) > 1:
+        for i, arg in enumerate(sys.argv):
+            if i > 0:
+                getFromFile(arg)
+    else:
+        run = input("Run on chunk files? (Y/N):")
+        if run.upper() == 'Y':
+            getAllFromChunk()
